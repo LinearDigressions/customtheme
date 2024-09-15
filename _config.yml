@@ -1,1 +1,7 @@
 exclude: ["customtheme.gemspec"]
+include: ["_pages"]
+# keep_files: ["_pages"]
+
+header_pages:
+- index.md
+- _pages/about.md
