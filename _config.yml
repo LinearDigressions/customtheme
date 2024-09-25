@@ -5,3 +5,6 @@ include: ["_pages"]
 header_pages:
 - index.md
 - _pages/about.md
+
+title: Into the Red Planet  
+subtitle: A Martian's Search for Meaning

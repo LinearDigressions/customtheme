@@ -2,8 +2,8 @@
     <div class="container">
         {%- assign default_paths = site.pages | map: "path" -%}
         {%- assign page_paths = site.header_pages | default: default_paths -%}
-        <h1>Welcome to the Digital Quest for Meaning</h1>
-        <h2>A 90s Journey Through Time and Ideas</h2>
+        <h1>{{ site.title }}</h1>
+        <h2>{{ site.subtitle }}</h2>
         <nav>
             {%- for path in page_paths -%}
                 {%- assign my_page = site.pages | where: "path", path | first -%}
