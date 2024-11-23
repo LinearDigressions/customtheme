@@ -11,6 +11,7 @@
 /* Table of contents
 ––––––––––––––––––––––––––––––––––––––––––––––––––
 - Grid
+- Colors
 - Base Styles
 - Typography
 - Links
@@ -113,6 +114,38 @@
 }
 
 
+
+/* Solarized Color Palette */
+/* https://ethanschoonover.com/solarized/ */
+:root {
+  --solarized-base03: #002b36;  /* Dark background */
+  --solarized-base02: #073642;  /* Darker background */
+  --solarized-base01: #586e75;  /* Medium background */
+  --solarized-base00: #657b83;  /* Medium light background */
+  --solarized-base0:  #839496;  /* Light background */
+  --solarized-base1: #93a1a1;  /* Lighter background */
+  --solarized-base2: #eee8d5;  /* Very light background */
+  --solarized-base3: #fdf6e3;  /* Very light background */
+  
+  /* Accent Colors */
+  --solarized-yellow: #b58900;  /* Yellow */
+  --solarized-orange: #cb4b16;  /* Orange */
+  --solarized-red: #dc322f;     /* Red */
+  --solarized-magenta: #d33682; /* Magenta */
+  --solarized-violet: #6c71c1;  /* Violet */
+  --solarized-blue: #268bd2;    /* Blue */
+  --solarized-cyan: #2aa198;    /* Cyan */
+  --solarized-green: #859900;   /* Green */
+  
+  /* Text and Background Colors */
+  --solarized-light: #fdf6e3; /* Light theme background */
+  --solarized-dark: #002b36;  /* Dark theme background */
+  --solarized-text-light: #fdf6e3; /* Light text */
+  --solarized-text-dark: #073642;  /* Dark text */
+}
+
+
+
 /* Base Styles
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /* NOTE
@@ -120,12 +153,6 @@ html is set to 62.5% so that all the REM measurements throughout Skeleton
 are based on 10px sizing. So basically 1.5rem = 15px :) */
 html {
   font-size: 62.5%; 
-  /* background-image: url('../img/space_tile_2.png');
-  /* background-size: 100% 100%; */
-  /* background-repeat: repeat;
-  overflow-x: scroll;
-  overflow-y: scroll; */ 
-
   overscroll-behavior: none;
 
 }
@@ -135,14 +162,8 @@ body {
   line-height: 1.6;
   font-weight: 400;
   font-family: 'Georgia', serif;
-  /* background-color: #7094ff; 90s pastel background */
-  color: #ffffff;
-  background-image: url('../img/space_tile_2.png');
-  background-repeat: repeat;
-  /* background-size: cover; */
-  overscroll-behavior: none;
-
-  /* min-height: 100vh; */
+  background-color: var(--solarized-dark);
+  color: var(--solarized-text-light);
 }
 
 
@@ -159,7 +180,7 @@ header {
   /* border: 5px solid #747474; */
   padding: 10px;
   background-color: transparent;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* add a subtle shadow */
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); add a subtle shadow */
   font-family: Helvetica, sans-serif; /* use a classic 90s font */
   text-align: center; /* center the text */
   margin-bottom: 20px;
@@ -201,20 +222,20 @@ nav a {
   margin: 0 15px;
   text-decoration: underline;
   font-size: 18px;
-  color: #ffffff; 
+  color: var(--solarized-cyan); 
   padding: 5px 10px;
 }
 nav a:hover {
-  color: #5159b3;
+  color: var(--solarized-base2);
 }
 
 a {
-  color: #ffffff; 
+  color: var(--solarized-cyan); 
   text-decoration: underline;
 }
 
 a:hover {
-  color: #5159b3;
+  color: var(--solarized-base2);
 }
 
 
@@ -228,7 +249,7 @@ input[type="button"] {
   display: inline-block;
   height: 38px;
   padding: 0 30px;
-  color: #555;
+  color: var(--solarized-text-light);
   text-align: center;
   font-size: 11px;
   font-weight: 600;
@@ -239,7 +260,7 @@ input[type="button"] {
   white-space: nowrap;
   background-color: transparent;
   border-radius: 4px;
-  border: 1px solid #bbb;
+  border: 1px solid var(--solarized-cyan);
   cursor: pointer;
   box-sizing: border-box; }
 .button:hover,
@@ -252,17 +273,17 @@ button:focus,
 input[type="submit"]:focus,
 input[type="reset"]:focus,
 input[type="button"]:focus {
-  color: #333;
-  border-color: #888;
+  color: var(--solarized-base3);
+  border-color: var(--solarized-blue);
   outline: 0; }
 .button.button-primary,
 button.button-primary,
 input[type="submit"].button-primary,
 input[type="reset"].button-primary,
 input[type="button"].button-primary {
-  color: #FFF;
-  background-color: #33C3F0;
-  border-color: #33C3F0; }
+  color: var(--solarized-text-light);
+  background-color: var(--solarized-cyan);
+  border-color: var(--solarized-cyan); }
 .button.button-primary:hover,
 button.button-primary:hover,
 input[type="submit"].button-primary:hover,
@@ -273,9 +294,9 @@ button.button-primary:focus,
 input[type="submit"].button-primary:focus,
 input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
-  color: #FFF;
-  background-color: #1EAEDB;
-  border-color: #1EAEDB; }
+  color: var(--solarized-base3);
+  background-color: var(--solarized-blue);
+  border-color: var(--solarized-blue); }
 
 
 /* Forms
@@ -432,7 +453,7 @@ hr {
   margin-top: 3rem;
   margin-bottom: 3.5rem;
   border-width: 0;
-  border-top: 1px solid #E1E1E1; }
+  border-top: 1px solid var(--solarized-base00); }
 
 
 /* Clearing
