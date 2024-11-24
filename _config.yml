@@ -8,3 +8,12 @@ header_pages:
 
 title: Into the Red Planet  
 subtitle: A Martian's Search for Meaning
+
+plugins:
+  - jekyll-archives
+
+jekyll-archives:
+  layout: archive
+  enabled: 
+    - categories
+  permalink: '/category/:name/'
