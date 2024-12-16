@@ -5,14 +5,17 @@ layout: base
 {{ content }}
 
 <h4>Recent Posts</h4>
+<ul>
 {% for post in site.posts %}
-<article>
+<li>
   <a href="{{ site.baseurl }}{{ post.url }}">
     {{ post.title }}
   </a> 
    - 
   <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date_to_long_string }}</time>
-</article>
-<br>
+</li>
 {% endfor %}
+</ul>
+<br>
+
 

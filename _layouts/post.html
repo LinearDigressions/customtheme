@@ -6,15 +6,14 @@ layout: base
 
 <div>Published: {{ page.date | date: "%b %-d, %Y" }}</div>
 <!-- <div>Modified: {{ page.last_modified_at | date: "%b %-d, %Y" }}</div> -->
-<div style="margin-bottom: 15px">Author: {{ page.author }}</div>
-
+<div>Author: {{ page.author }}</div>
 <div>Categories: 
-  {% for category in page.categories %}
-    <a href="{{ site.baseurl }}/category/{{ category | slugify }}" class="category">{{ category }}</a>
+{% for category in page.categories %}
+    <a href="{{ site.baseurl }}/category/{{ category | slugify }}" class="category">{{ category | capitalize }}</a>
     {% unless forloop.last %},&nbsp;{% endunless %}
   {% endfor %}
 </div>
 
-
+<br>
 {{ content }}
 
